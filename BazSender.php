@@ -4,24 +4,18 @@ declare(strict_types=1);
 
 namespace App;
 
-class BazSender implements SenderInterface
+class BazSender extends Sender
 {
-    public $settings;
-
-    public function setCredentials(array $settings)
-    {
-        $this->settings = $settings;
-    }
-
+    /**
+     * Sends data to the Baz crm
+     *
+     * @param array $data
+     * @return int
+     */
     public function send(array $data)
     {
-        //@todo Implement logic here for send a lead to the Baz crm
-    }
+        //@todo Do not implement a logic for send specifically. Imagine that she is here.
 
-    public function get($leadId): array
-    {
-        //@todo Implement logic here
-
-        return [];
+        return 200;
     }
 }

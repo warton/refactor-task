@@ -6,12 +6,13 @@ namespace App;
 
 use InvalidArgumentException;
 
+/**
+ * Class CrmManager
+ * @package App
+ */
 class CrmManager
 {
-    /**
-     * @var SenderInterface
-     */
-    private $client;
+    private BazSender $client;
 
     /**
      * @var array
@@ -32,15 +33,16 @@ class CrmManager
         $this->client = new BazSender();
     }
 
-    public function sendLead(array $clientEntity)
+    /**
+     * Sends the person to a crm
+     *
+     * @param array $clientEntity
+     * @return int
+     */
+    public function sendPerson(array $clientEntity): int
     {
         $this->client->setCredentials($this->settings);
-        $this->client->send($clientEntity);
-    }
 
-    public function getLead(int $leadId)
-    {
-        $this->client->setCredentials($this->settings);
-        return $this->client->get($leadId);
+        return $this->client->send($clientEntity);
     }
 }

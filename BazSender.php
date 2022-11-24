@@ -14,7 +14,7 @@ class BazSender extends Sender
      */
     public function send(array $data)
     {
-        //@todo Do not implement a logic for send specifically. Imagine that she is here.
+        //@todo Do not implement a logic for send specifically. Imagine that it's here.
 
         return 200;
     }

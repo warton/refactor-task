@@ -1,12 +1,12 @@
-**Условия**:
+**Terms:**
 
-Разработчику была поставлена задача интегрировать внешнюю CRM систему и отправлять в нее данные. В настоящий момент CRM одна, но в будущем их может быть N. Разработчик с задачей справился, код решения представлен в этом репозитории.
+The developer was tasked with integrating an external CRM system and sending data to it. There is only one CRM at the moment, but there may be N in the future. The developer completed the task, the solution code is in this repository.
 
-**Задание**:
+**Assignment:**
 
-Проведите максимально подробный Code Review. Внести свои предложения по улучшению, если они необходимы.
+Review the code as thoroughly as possible. Make suggestions for improvements if necessary.
 
-**Требования к решению**:
+**Solution requirements:**
 
-Решение необходимо оформить в виде ссылки на Google Docs.
-Предоставление решения в правильном виде — один из критериев оценки.
+The solution must be in the form of a Google Docs link. 
+Providing the solution in the correct form is one of the evaluation criteria.

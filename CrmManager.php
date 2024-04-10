@@ -12,25 +12,27 @@ use InvalidArgumentException;
  */
 class CrmManager
 {
-    private BazSender $client;
+
+    /**
+     * @var Sender|BazSender
+     */
+    private Sender $sender;
 
     /**
      * @var array
      */
-    private $settings;
+    private array $settings;
 
+    /**
+     * @param array $settings
+     */
     public function __construct(array $settings)
     {
-        if (empty($settings['user'])) {
-            throw new InvalidArgumentException('User must be set!');
+        if (empty($settings['sender'])) {
+            throw new InvalidArgumentException('Sender must be set!');
         }
 
-        if (empty($settings['passwd'])) {
-            throw new InvalidArgumentException('Password must be set!');
-        }
-
-        $this->settings = $settings;
-        $this->client = new BazSender();
+        $this->sender = SenderFactory::make($settings['sender'], $settings);
     }
 
     /**
@@ -41,8 +43,6 @@ class CrmManager
      */
     public function sendPerson(array $clientEntity): int
     {
-        $this->client->setCredentials($this->settings);
-
-        return $this->client->send($clientEntity);
+        return $this->sender->send($clientEntity);
     }
 }
